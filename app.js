@@ -1,3 +1,15 @@
-console.log("What certifications for development would you suggest getting?");
+var life = 100; //Global variable NUMBER (INT)
 
-document.getElementById("displayText").innerHTML = "HEY YOU GUYS!!";
+const Cake = {  //Object variable
+    flavor: "Chocolate",
+    shape: "Round",
+    frosting: "Strawberry"
+};
+
+function func(life){
+    let blockA = "Foo"; //Block variable STRING
+    console.log(blockA);
+    life=life+10; //Mathematical Operation
+    return life;
+}
+console.log(func(life));
