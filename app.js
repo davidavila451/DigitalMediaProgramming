@@ -1,15 +1,23 @@
-var life = 100; //Global variable NUMBER (INT)
-
-const Cake = {  //Object variable
-    flavor: "Chocolate",
-    shape: "Round",
-    frosting: "Strawberry"
+//Object with properties
+var person = {
+    firstName: "David",
+    lastName: "A",
+    age: 25
 };
 
-function func(life){
-    let blockA = "Foo"; //Block variable STRING
-    console.log(blockA);
-    life=life+10; //Mathematical Operation
-    return life;
+//Functions
+function birthdayParty(age){
+    console.log("It's Party Time!");
+    return age+1;
 }
-console.log(func(life));
+
+function shout(greeting){
+    //Method
+    return greeting.toUpperCase();
+}
+
+//Event
+person["age"] = birthdayParty(person["age"]);
+//Error Checking & Printing
+console.log(person["age"]);
+console.log(shout("hey"));
