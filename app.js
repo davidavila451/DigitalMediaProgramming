@@ -64,3 +64,51 @@ switch(name.length){
         console.log("Your name is long. It is "+name.length.toString()+" characters.");
         break;
 }
+
+/********************/
+/*** Assignment 5 ***/
+/********************/
+//Declare and Set Data
+const text = document.querySelector(".title");
+const users = document.querySelectorAll(".name-list li");
+const userList = document.querySelector(".name-list");
+const listInput = document.querySelector(".list-input");
+const addListBtn = document.querySelector(".addListBtn");
+const hideName = document.querySelector(".hide-name");
+const hideNamesBtn = document.querySelector(".hideNamesBtn");
+const revealAllBtn = document.querySelector(".revealAllBtn");
+
+//Add New Names
+addListBtn.addEventListener('click', function(){
+    const newLi = document.createElement("LI");
+    const liContent = document.createTextNode(listInput.value);
+
+    newLi.appendChild(liContent);
+
+    userList.appendChild(newLi);
+});
+
+//Hide Names Handler
+hideNamesBtn.addEventListener('click', function(){
+    //For Loop
+    for(let i=0; i<users.length; i++){
+        if(users[i].innerText.split("")[0] == hideName.value){
+            users[i].classList.toggle("hide");
+        }
+    }
+});
+
+//Reveal Names Handler
+revealAllBtn.addEventListener('click',function(){
+    //While Loop
+    let i = 0;
+    while(i<users.length){
+        if(users[i].classList.contains("hide")){
+            users[i].classList.toggle("hide");
+        }
+        i++;
+    }
+});
+
+//Change CSS with JS
+text.style.color = "red";
