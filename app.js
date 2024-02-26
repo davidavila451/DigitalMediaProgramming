@@ -112,3 +112,30 @@ revealAllBtn.addEventListener('click',function(){
 
 //Change CSS with JS
 text.style.color = "red";
+
+/********************/
+/*** Assignment 6 ***/
+/********************/
+
+//Object
+const user = {
+    name: 'Edwin',
+    age: 24,
+    married: false,
+    //Array
+    purchases: ["phone", "car", "laptop"],
+
+    //Object Method
+    sayName: function(){
+        console.log("My nanme is "+this.name);
+    },
+
+    //Array Method
+    numPurch: function(){
+        console.log("I have purchased "+this.purchases.length+" items.");
+    }
+};
+
+//Call of functions
+user.sayName();
+user.numPurch();
