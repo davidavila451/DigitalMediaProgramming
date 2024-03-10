@@ -1,27 +1,27 @@
 let data = [
     {
-        name: 'Matero',
-        age: '30'
+        name: 'Greg',
+        skill: 'dance'
     },
     {
         name: 'Sarah',
-        age: '32'
+        skill: 'sing'
     },
     {
         name: 'John',
-        age: '20'
+        skill: 'drum'
     },
     {
         name: 'Tim',
-        age: '27'
+        skill: 'make you laugh'
     },
     {
         name: 'Sam',
-        age: '22'
+        skill: 'write poetry'
     },
     {
         name: 'Joey',
-        age: '34'
+        skill: 'do magic'
     }
 ];
 
@@ -29,7 +29,7 @@ const info = document.querySelector('#info');
 
 let details = data.map(function(item){
     return (
-        '<div>'+item.name+' is '+item.age+' years old.</div>'
+        '<div>'+item.name+' can '+item.skill+'.</div>'
     )
 });
 

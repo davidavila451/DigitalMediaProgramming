@@ -1,12 +1,14 @@
-const closedFace = document.querySelector(".closed");
-const openFace = document.querySelector(".open");
+const sun = document.querySelector(".sun");
+const moon = document.querySelector(".moon");
 
-closedFace.addEventListener("click", function(){
-        closedFace.classList.remove("active");
-        openFace.classList.add("active");
+sun.addEventListener("click", function(){
+        sun.classList.remove("active");
+        document.body.style.backgroundColor = "rgb(0,0,20)";
+        moon.classList.add("active");
 });
 
-openFace.addEventListener("click", function(){
-    openFace.classList.remove("active");
-    closedFace.classList.add("active");
+moon.addEventListener("click", function(){
+    moon.classList.remove("active");
+    document.body.style.backgroundColor = "rgb(350,350,0)";
+    sun.classList.add("active");
 });
