@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>Enter a zip code</p>
+        <input id="id1" type="number" min="10000" max="99999" required>
+        <button onclick="myFunction()">OK</button>
+        <p id="demo"></p>
+
+        <button onclick="goBack()">View History</button>
+        <p id="history"></p>
+
+        <p>Store your name then come back later</p>
+        <input id="name" type="text">
+        <button onclick="storeName()">Store</button>
+        <button onclick="getName()">Get</button>
+        <p id="displayName"></p>
+
+        <p>Start the rando color wheel</p>
+        <button onclick="startWorker()">Start Worker</button>
+        <button onclick="stopWorker()">Stop Worker</button>
+    </body>
+
+    <script src="./app.js"></script>
+</html>
