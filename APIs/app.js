@@ -25,14 +25,55 @@ let w;
 
 function startWorker() {
   if (typeof(w) == "undefined") {
-    w = new Worker("demo_workers.js");
+    w = new Worker("./demo_worker.js");
   }
   w.onmessage = function(event) {
-    document.getElementById("result").innerHTML = event.data;
+     document.getElementById("colorBlock").style.backgroundColor = event.data;
   };
 }
 
 function stopWorker() {
   w.terminate();
   w = undefined;
+}
+
+function fetcher(){
+  let file = "./hotdog_water.txt"
+
+  fetch (file)
+  .then(x => x.text())
+  .then(y => document.getElementById("hotdogWater").innerHTML = y);
+}
+
+const mapDisplay = document.getElementById("map");
+
+function getLocation() {
+  mapDisplay.innerHTML = "Loading..."
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    mapDisplay.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  mapDisplay.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      mapDisplay.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      mapDisplay.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      mapDisplay.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      mapDisplay.innerHTML = "An unknown error occurred."
+      break;
+  }
 }
