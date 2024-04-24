@@ -1,5 +1,6 @@
+var newColor;
 /*** Get element with Wisteria ID, if element exist add eventlistener to element ***/
-elem=document.getElementById('wisteria');
+const elem=document.getElementById('wisteria');
 if(elem){
     document.getElementById('wisteria').addEventListener('click',glitchFunc);//Wait for mouse over text with ID: wisteria
 }
@@ -8,7 +9,6 @@ if(elem){
 function glitchFunc(){
   	/*** Declare all possible random characters that can appear in glitch ***/
 	var char = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0","!","@","#","$","%","^","&","*","(",")","-","=","<",">","/"];
-	const elem = document.getElementById("wisteria")//Get text through unique ID
 	var str = elem.innerHTML.split("");//Turn text into array
   	var randStr = [];//Prep Random String Variable
   	var buff = str.slice(0);//Copy text to buffer array
@@ -58,4 +58,11 @@ function storeFile(){
 
 function getFile(){
     document.getElementById("displayFile").innerText = "File Content: "+window.localStorage.getItem("name");
+}
+
+function changeColor(){
+    newColor = document.getElementById("newColor").value;
+    let colorWheel = document.querySelector(".colorWheel");
+    colorWheel.style.backgroundColor = newColor;
+    colorWheel.style.transitionDuration = '0.5s';
 }
